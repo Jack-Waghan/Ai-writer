@@ -6,7 +6,7 @@ import logging
 
 
 # Set the OpenAI API key
-openai.api_key = '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'
+openai.api_key = ''
 
 # Set the Telegram bot token
 bot_token = '5800430957:AAFcXZNYrqZLzdzxFjDubhEKX9vBr4cbKQ0'
