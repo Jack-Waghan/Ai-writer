@@ -6,10 +6,10 @@ import logging
 
 
 # Set the OpenAI API key
-openai.api_key = ''
+openai.api_key = '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'
 
 # Set the Telegram bot token
-bot_token = '5800430957:AAFcXZNYrqZLzdzxFjDubhEKX9vBr4cbKQ0'
+bot_token = '5817313631:AAHCjAd3fpM32nk8ts6g4HPag7trAez7MHw'
 
 # Create the Telegram bot
 bot = telegram.Bot(token=bot_token)
@@ -24,17 +24,16 @@ def help(update, context):
 
 # Define the message handler
 def message(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text="_generating..._", parse_mode=telegram.ParseMode.MARKDOWN)       # Get the message text
+    # Get the message text
     message_text = update.message.text
 
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="text-davinci-002",
         prompt=message_text,
-        max_tokens=256,
+        max_tokens=1024,
         temperature=0.3
     )
     context.bot.send_message(chat_id=update.effective_chat.id, text=response["choices"][0]["text"])
-    
 
 def handle_text(update, context):
     # Do something with the incoming text messages
