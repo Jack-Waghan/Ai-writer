@@ -24,6 +24,7 @@ def help(update, context):
 
 # Define the message handler
 def message(update, context):
+    context.bot.send_message(chat_id=update.effective_chat.id, text="_writing..._", parse_mode=telegram.ParseMode.MARKDOWN)
     # Get the message text
     message_text = update.message.text
 
